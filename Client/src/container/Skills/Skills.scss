@@ -1,0 +1,99 @@
+/* components/SkillsSection.scss */
+.skills-section {
+  text-align: center;
+
+  .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    color: #333;
+  }
+
+  .skills-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .skill-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f0f0f0, #ffffff);
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s;
+    cursor: default;
+
+    img {
+      width: 70%;
+      height: 70%;
+      object-fit: contain;
+      aspect-ratio: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .name {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #555;
+    }
+
+    &:hover {
+      transform: translateY(-6px) scale(1.05);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .section-title {
+      font-size: 2rem;
+    }
+
+    .skill-card {
+      padding: 1rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .skills-grid {
+      grid-template-columns: repeat(2,minmax(100px, 1fr));
+      img {
+        width: 45%;
+        height: 45%;
+        object-fit: contain;
+        aspect-ratio: 1;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+  @media (max-width: 970px) and (min-width: 768px) {
+    .skills-grid {
+      grid-template-columns: repeat(3,minmax(100px, 1fr));
+      img {
+        width: 50%;
+        height: 50%;
+        object-fit: contain;
+        aspect-ratio: 1;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+
+  @media (max-width: 1400px) and (min-width: 970px) {
+    .skills-grid {
+      grid-template-columns: repeat(4, 1fr);
+      img {
+        width: 60%;
+        height: 60%;
+        object-fit: contain;
+        aspect-ratio: 1;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+}
