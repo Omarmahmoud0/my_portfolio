@@ -7,14 +7,21 @@ import "./Navbar.scss";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
+  const [active, setActive] = useState("home");
 
   return (
     <nav className="app__navbar">
       <ul className="app__navbar-links">
         {["home", "about", "work", "skills", "contact"].map((item) => (
           <li className="app__flex p-text" key={`link-${item}`}>
-            <div />
-            <a href={`#${item}`}>{item}</a>
+            <div className="active" />
+            <a
+              href={`#${item}`}
+              className={active === item ? "active" : ""}
+              onClick={() => setActive(item)}
+            >
+              {item}
+            </a>
           </li>
         ))}
       </ul>
@@ -31,7 +38,11 @@ const Navbar = () => {
             <ul>
               {["home", "about", "work", "skills", "contact"].map((item) => (
                 <li key={item}>
-                  <a href={`#${item}`} onClick={() => setToggle(false)}>
+                  <a
+                    href={`#${item}`}
+                    onClick={() => setToggle(false)}
+                    className={active === item ? "active" : ""}
+                  >
                     {item}
                   </a>
                 </li>
