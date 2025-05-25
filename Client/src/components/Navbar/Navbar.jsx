@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { HiMenuAlt4, HiX } from "react-icons/hi";
 import { motion } from "framer-motion";
-
-import { images } from "../../constants";
 import "./Navbar.scss";
 
 const Navbar = () => {
@@ -31,7 +29,7 @@ const Navbar = () => {
 
         {toggle && (
           <motion.div
-            whileInView={{ x: [300, 0] }}
+            whileInView={{ x: [200, 0] }}
             transition={{ duration: 0.85, ease: "easeOut" }}
           >
             <HiX onClick={() => setToggle(false)} />
